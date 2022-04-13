@@ -7,20 +7,15 @@ const thread = setTick(function(){
 
 onNet("brp_core:spawnPlayer", () => {
     exports.spawnmanager.spawnPlayer({
-        x: 500.0,
-        y: 500.0,
-        z: 500.0,
-        model: "mp_m_freemode_01"
+        x: 2590.05,
+        y: -1202.15,
+        z: 53.9,
+        model: "A_M_M_JamesonGuard_01", // TODO: switch model to use the free mode (ability to change clothes)
+        skipFade: false
     }, () => {
         const playerId = PlayerId();
-        const ped = PlayerPedId();
+        const playerPed = PlayerPedId();
 
-        SetPedDefaultComponentVariation(ped);
-
-        SetCanAttackFriendly(ped, true, false);
-        NetworkSetFriendlyFireOption(true);
-
-        ShutdownLoadingScreen();
-        ShutdownLoadingScreenNui();
+        Citizen.invokeNative("0xC866A984", playerPed);
     });
 });
