@@ -68,11 +68,11 @@ export class Player {
         this.job = job;
     }
 
-    public setIsLoaded(value: boolean) {
+    public setIsLoaded(value: boolean): void {
         this.hasLoaded = value;
     }
 
-    public triggerEvent(eventName: string, ...args: any[]) {
+    public triggerEvent(eventName: string, ...args: any[]): void {
         emitNet(eventName, this.playerId, ...args);
     }
 }
