@@ -5,6 +5,19 @@ const thread = setTick(function(){
     }
 });
 
+setImmediate(() => {
+    SetMinimapHideFow(true);
+    Citizen.invokeNative("0x5FB53015", 2);
+    Citizen.invokeNative("0x50C803A4CD5932C5", 0); // hide hud
+});
+
+setTick(() => {
+    Citizen.invokeNative("0xFE99B66D079CF6BC", 0, 0xCF8A4ECA, true) // disable control [LALT]
+    Citizen.invokeNative("0xFE99B66D079CF6BC", 0, 0xAC4BD4F1, true) // disable control [TAB]
+    Citizen.invokeNative("0xFE99B66D079CF6BC", 0, 0xB238FE0B, true) // disable control [TAB - HOLSTER] (inventory)
+    Citizen.invokeNative("0x543DFE14BE720027", false) // remove cinematic mode
+});
+
 onNet("brp_core:spawnPlayer", () => {
     exports.spawnmanager.spawnPlayer({
         x: 2590.05,

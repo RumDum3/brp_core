@@ -1,5 +1,5 @@
 enum LoggerChannel {
-    SERVER_BANS = 'https://discord.com/api/webhooks/962194922163818516/zZZZSk8kBsZIu0Xj1-Nq77SsdjV3fGA8a63wC50jaY6loWqHK0GrRgKSjDUh2xAQZrN3'
+    SERVER_BANS = ''
 }
 
 enum LoggerType {
